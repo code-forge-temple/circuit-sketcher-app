@@ -84,7 +84,7 @@ npm run preview
     - You can reuse the node by right-clicking on the canvas and selecting `Add Node from Library`.
     - The connections between circuit nodes can be done by drag-and-dropping one port to the destination port (if it is a compatible port).
 
-
+      https://github.com/user-attachments/assets/d925566b-9a07-417f-94ad-ebb5e09c4ffb
 
 ## Demo
 You can view the deployed version of the application [here](https://code-forge-temple.github.io/circuit-sketcher-app).
