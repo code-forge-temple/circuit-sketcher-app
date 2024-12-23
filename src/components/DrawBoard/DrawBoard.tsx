@@ -34,13 +34,14 @@ export const DrawBoard: React.FC = () => {
 
         const blob = new Blob([JSON.stringify(JSON.parse(jsonStr), null, 4)], {type: "application/json"});
 
-        saveAs(blob, "canvas.json");
+        saveAs(blob, "Circuit Sketcher Canvas.circuit-sketcher");
     };
 
     const handleSaveLibrary = () => {
+        const timestamp = new Date().getTime();
+        const filename = `Circuit Sketcher Library-${timestamp}.circuit-sketcher.lib`;
         const blob = new Blob([LocalStorageManager.getLibrary(true)], {type: "application/json"});
-
-        saveAs(blob, "library.json");
+        saveAs(blob, filename);
     };
 
     const handleLoadCanvasClick = () => {
@@ -101,7 +102,7 @@ export const DrawBoard: React.FC = () => {
                     <input
                         type="file"
                         ref={canvasFileInputRef}
-                        accept=".json"
+                        accept=".circuit-sketcher"
                         onChange={handleCanvasFileChange}
                     />
                     <button type="button" className="btn btn-primary icon-btn" onClick={handleSaveCanvas}><img src={saveIcon} alt="Save" /></button>
@@ -112,7 +113,7 @@ export const DrawBoard: React.FC = () => {
                     <input
                         type="file"
                         ref={libraryFileInputRef}
-                        accept=".json"
+                        accept=".circuit-sketcher.lib,.lib"
                         onChange={handleLibraryFileChange}
                     />
                     <button type="button" className="btn btn-primary icon-btn" onClick={handleSaveLibrary} ><img src={saveIcon} alt="Save" /></button>

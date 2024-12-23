@@ -72,10 +72,19 @@ npm run preview
 
 ### Usage
 
-1. Open the application in your browser.
-2. Use the toolbar to draw and manipulate circuit elements.
-3. Save your work using the save buttons.
-4. Load previously saved canvases and libraries using the load buttons.
+## Usage
+
+1. Open the app trough the `npm run preview` or `npm run dev` commands.
+2. Start drawing your circuit on the canvas:
+    - On the canvas, right-click to show the canvas menu, and select `Create Node`.
+    - Right-click on the node to show the node menu, and select `Change Image` and select an image relevant to your circuit node.
+    - Right-click on the node to show the node menu, and select `Add Port` and select the port location and type.
+    - You can rename the circuit node label or port label by double-clicking on the label. The port or port label can also be deleted (right-click on the port to show the port menu and go from there).
+    - After you are satisfied with your changes to the circuit node, and if you wish to save the circuit node to be able to reuse it in the current or a different circuit, you can right-click on the circuit node and press `Save Node to Library`.
+    - You can reuse the node by right-clicking on the canvas and selecting `Add Node from Library`.
+    - The connections between circuit nodes can be done by drag-and-dropping one port to the destination port (if it is a compatible port).
+
+
 
 ## Demo
 You can view the deployed version of the application [here](https://code-forge-temple.github.io/circuit-sketcher-app).
