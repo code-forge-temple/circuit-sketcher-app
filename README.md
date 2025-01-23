@@ -1,5 +1,5 @@
 # circuit-sketcher-app
-An application to draw circuits on a canvas, based on circuit-sketcher-core.
+An application to draw circuits on a canvas. It is based on the [code-forge-temple/circuit-sketcher-core](https://github.com/code-forge-temple/circuit-sketcher-core).
 
 ## Table of Contents
 
@@ -9,7 +9,6 @@ An application to draw circuits on a canvas, based on circuit-sketcher-core.
   - [Building](#building)
   - [Linting](#linting)
   - [Preview](#preview)
-  - [Usage](#usage)
 - [Demo](#demo)
 - [License](#license)
 
@@ -70,21 +69,23 @@ To preview the production build, run:
 npm run preview
 ```
 
-### Usage
-
 ## Usage
 
-1. Open the app trough the `npm run preview` or `npm run dev` commands.
+1. Open the deployed version of the application [here](https://code-forge-temple.github.io/circuit-sketcher-app).
 2. Start drawing your circuit on the canvas:
     - On the canvas, right-click to show the canvas menu, and select `Create Node`.
-    - Right-click on the node to show the node menu, and select `Change Image` and select an image relevant to your circuit node.
-    - Right-click on the node to show the node menu, and select `Add Port` and select the port location and type.
-    - You can rename the circuit node label or port label by double-clicking on the label. The port or port label can also be deleted (right-click on the port to show the port menu and go from there).
-    - After you are satisfied with your changes to the circuit node, and if you wish to save the circuit node to be able to reuse it in the current or a different circuit, you can right-click on the circuit node and press `Save Node to Library`.
+    - Right-click on the node to show the node menu, select `Change Image`, and choose an image relevant to your circuit node.
+    - Right-click on the node to show the node menu, select `Add Port`, and choose the port location and type.
+    - You can rename the circuit node label or port label by double-clicking on the label. The port or port label can also be deleted (right-click on the port to show the port menu and proceed from there).
+    - You can relocate ports, either to a different node side or rearrange the ports on the same side, by dragging and dropping the port to the desired location within the dotted blue area.
+    - After you are satisfied with your changes to the circuit node, and if you wish to save the circuit node to reuse it in the current or a different `.circuit-sketcher` file, you can right-click on the circuit node and press `Save Node to Library` (this will update the root Obsidian vault `circuit-sketcher.lib` file).
     - You can reuse the node by right-clicking on the canvas and selecting `Add Node from Library`.
-    - The connections between circuit nodes can be done by drag-and-dropping one port to the destination port (if it is a compatible port).
+    - Connections between circuit nodes can be made by dragging and dropping one port to the destination port (if it is a compatible port). You can delete a connection by selecting it and then pressing the Delete key.
+    - You can drag the entire circuit by holding the mouse scroll button and moving the mouse.
 
-      https://github.com/user-attachments/assets/d925566b-9a07-417f-94ad-ebb5e09c4ffb
+A short video tutorial on how to use the application (the video is showcasing the Obsidian plugin version of the Circuit Sketcher but the core functionality is the same):
+
+[![S6ifgDb83Pg](https://img.youtube.com/vi/S6ifgDb83Pg/0.jpg)](https://www.youtube.com/watch?v=S6ifgDb83Pg)
 
 ## Demo
 You can view the deployed version of the application [here](https://code-forge-temple.github.io/circuit-sketcher-app).
