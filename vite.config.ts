@@ -1,11 +1,10 @@
 import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
-import commonjs from 'vite-plugin-commonjs';
 import path from 'path';
 
 
 export default defineConfig({
-    plugins: [react(), commonjs()],
+    plugins: [react()],
     resolve: {
         dedupe: ["react", "react-dom"],
         alias: {
@@ -17,7 +16,6 @@ export default defineConfig({
     },
     build: {
         commonjsOptions: {
-            transformMixedEsModules: true,
             include: [/circuit-sketcher-core/, /node_modules/],
         },
     },
