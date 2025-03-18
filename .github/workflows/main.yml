@@ -6,20 +6,20 @@ on:
       - main
 
 permissions:
-  contents: write  # Allows actions to push to the repository (required for gh-pages)
-  pages: write    # Allows actions to deploy to GitHub Pages
-  
+  contents: write # Allows actions to push to the repository (required for gh-pages)
+  pages: write # Allows actions to deploy to GitHub Pages
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout the code
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
 
       # Step 2: Set up Node.js using .nvmrc
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4.3.0
         with:
           node-version-file: .nvmrc
 
@@ -33,7 +33,7 @@ jobs:
 
       # Step 5: Upload production-ready build files (artifact)
       - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.1
         with:
           name: production-files
           path: ./dist
@@ -44,14 +44,14 @@ jobs:
     steps:
       # Step 1: Download artifact
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.2.0
         with:
           name: production-files
           path: ./dist
 
       # Step 2: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
