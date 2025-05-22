@@ -31,16 +31,16 @@ export const DrawBoard: React.FC = () => {
 
     const handleSaveCanvas = async () => {
         const jsonStr = await CanvasManager.getInstance().stringify();
-
         const blob = new Blob([JSON.stringify(JSON.parse(jsonStr), null, 4)], {type: "application/json"});
 
         saveAs(blob, "Circuit Sketcher Canvas.circuit-sketcher");
     };
 
-    const handleSaveLibrary = () => {
+    const handleSaveLibrary = async () => {
         const timestamp = new Date().getTime();
         const filename = `Circuit Sketcher Library-${timestamp}.circuit-sketcher.lib`;
-        const blob = new Blob([LocalStorageManager.getLibrary(true)], {type: "application/json"});
+        const blob = new Blob([await LocalStorageManager.getLibrary(true)], {type: "application/json"});
+
         saveAs(blob, filename);
     };
 
@@ -63,7 +63,7 @@ export const DrawBoard: React.FC = () => {
     };
 
     const handleLibraryFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-        LocalStorageManager.setLibrary(await loadJsonFile(event));
+        await LocalStorageManager.setLibrary(await loadJsonFile(event));
     };
 
     const handleResize = () => {
