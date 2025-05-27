@@ -1,6 +1,6 @@
 {
   "name": "circuit-sketcher-app",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "author": "Code Forge Temple",
   "description": "An application to draw circuits on a canvas, based on circuit-sketcher-core.",
   "license": "GPL",
