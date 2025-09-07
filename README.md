@@ -1,5 +1,10 @@
-# circuit-sketcher-app
-An application to draw circuits on a canvas. It is based on the [code-forge-temple/circuit-sketcher-core](https://github.com/code-forge-temple/circuit-sketcher-core).
+# Circuit Sketcher - Web App
+
+**An application to draw circuits on a canvas. It is based on the [code-forge-temple/circuit-sketcher-core](https://github.com/code-forge-temple/circuit-sketcher-core).**
+
+
+> ⭐️ **Love this project?** Please consider [starring the repository](https://github.com/code-forge-temple/circuit-sketcher-obsidian-plugin) on GitHub and [supporting development](https://github.com/sponsors/code-forge-temple) to help me continue building amazing features!  
+
 
 ## Table of Contents
 
@@ -108,3 +113,11 @@ To help you get started with Circuit Sketcher, we provide a curated library of c
 
 ## License
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for more details.
+
+## ✨ My Other Projects
+
+✦ [**Agentic Signal**](https://github.com/code-forge-temple/agentic-signal) – Visual AI agent workflow automation platform with local LLM integration - build intelligent workflows using drag-and-drop interface, no cloud dependencies required.  
+
+✦ [**ScribePal**](https://github.com/code-forge-temple/scribe-pal) - An Open Source intelligent browser extension that leverages AI to empower your web experience by providing contextual insights, efficient content summarization, and seamless interaction while you browse.  
+
+ ✦ [**Local LLM NPC**](https://github.com/code-forge-temple/local-llm-npc) An interactive educational game built for the Google Gemma 3n Impact Challenge.  
