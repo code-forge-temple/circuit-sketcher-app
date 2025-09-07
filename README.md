@@ -3,7 +3,7 @@
 **An application to draw circuits on a canvas. It is based on the [code-forge-temple/circuit-sketcher-core](https://github.com/code-forge-temple/circuit-sketcher-core).**
 
 
-> ⭐️ **Love this project?** Please consider [starring the repository](https://github.com/code-forge-temple/circuit-sketcher-obsidian-plugin) on GitHub and [supporting development](https://github.com/sponsors/code-forge-temple) to help me continue building amazing features!  
+> ⭐️ **Love this project?** Please consider [starring the repository](https://github.com/code-forge-temple/circuit-sketcher-app) on GitHub and [supporting development](https://github.com/sponsors/code-forge-temple) to help me continue building amazing features!  
 
 
 ## Table of Contents
