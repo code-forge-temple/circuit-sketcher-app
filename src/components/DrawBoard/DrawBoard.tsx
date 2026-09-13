@@ -113,7 +113,10 @@ export const DrawBoard: React.FC = () => {
                     <input
                         type="file"
                         ref={libraryFileInputRef}
-                        accept=".circuit-sketcher.lib,.lib"
+                        /* .json too: the canvas menu's "Export Library" writes .json (it shares a
+                           format-generic helper with node export), as does the published
+                           circuit-sketcher-lib component library */
+                        accept=".circuit-sketcher.lib,.lib,.json"
                         onChange={handleLibraryFileChange}
                     />
                     <button type="button" className="btn btn-primary icon-btn" onClick={handleSaveLibrary} ><img src={saveIcon} alt="Save" /></button>
