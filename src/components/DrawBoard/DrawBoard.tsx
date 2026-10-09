@@ -39,7 +39,8 @@ export const DrawBoard: React.FC = () => {
     const handleSaveLibrary = async () => {
         const timestamp = new Date().getTime();
         const filename = `Circuit Sketcher Library-${timestamp}.circuit-sketcher.lib`;
-        const blob = new Blob([await LocalStorageManager.getLibrary(true)], {type: "application/json"});
+        // the same file as Manage Library's Export... on the library root: keyed by name, no "default"
+        const blob = new Blob([JSON.stringify(await LocalStorageManager.exportLibrary(), null, 4)], {type: "application/json"});
 
         saveAs(blob, filename);
     };
@@ -63,7 +64,12 @@ export const DrawBoard: React.FC = () => {
     };
 
     const handleLibraryFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-        await LocalStorageManager.setLibrary(await loadJsonFile(event));
+        // merged in and validated, as Manage Library's Import... does - not written over the library
+        try {
+            await LocalStorageManager.importLibrary(JSON.parse(await loadJsonFile(event)));
+        } catch {
+            alert("That file isn't a library or node export.");
+        }
     };
 
     const handleResize = () => {
@@ -71,11 +77,9 @@ export const DrawBoard: React.FC = () => {
             clearTimeout(resizeTimeoutRef.current);
         }
 
-        resizeTimeoutRef.current = window.setTimeout(async () => {
+        resizeTimeoutRef.current = window.setTimeout(() => {
             if (canvasRef.current) {
-                const jsonStr = await CanvasManager.getInstance().stringify();
-
-                CanvasManager.getInstance().parse(jsonStr);
+                CanvasManager.getInstance().resize();
             }
         }, 300);
     };
@@ -113,9 +117,8 @@ export const DrawBoard: React.FC = () => {
                     <input
                         type="file"
                         ref={libraryFileInputRef}
-                        /* .json too: the canvas menu's "Export Library" writes .json (it shares a
-                           format-generic helper with node export), as does the published
-                           circuit-sketcher-lib component library */
+                        /* .json too: Manage Library's Export... writes .json, as does the
+                           published circuit-sketcher-lib component library */
                         accept=".circuit-sketcher.lib,.lib,.json"
                         onChange={handleLibraryFileChange}
                     />
